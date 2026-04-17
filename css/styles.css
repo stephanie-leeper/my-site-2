@@ -1,0 +1,92 @@
+:root{
+  --bg:#f7fbfd;
+  --card-bg:#ffffff;
+  --text:#22242a;
+  --muted:#55606a;
+  --accent:#2b8fb9; /* coastal blue */
+  --accent-strong:#1f6f91;
+  --grey:#3b4250;
+  --shadow: 0 10px 30px rgba(35,47,63,0.08);
+}
+.dark{
+  --bg:#0f1720;
+  --card-bg:#0b1116;
+  --text:#e6eef6;
+  --muted:#9aa6b2;
+  --accent:#76c0dd;
+  --accent-strong:#4aa0c6;
+  --grey:#cfd8e3;
+  --shadow: 0 10px 30px rgba(3,6,11,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2.5rem 1rem;
+}
+.card{
+  width:100%;
+  max-width:480px;
+  background:linear-gradient(180deg, var(--card-bg), var(--card-bg));
+  border-radius:16px;
+  padding:2.25rem 1.5rem 1.5rem;
+  box-shadow:var(--shadow);
+  position:relative;
+  text-align:center;
+}
+.theme-toggle{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:transparent;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:6px 9px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:18px;
+}
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin:0 auto 1rem;
+  background: radial-gradient(circle at 25% 20%, #e8f7fb 0%, #cfeef7 30%, #b4e6f4 60%);
+  border:4px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 20px rgba(41,92,120,0.12), inset 0 -6px 12px rgba(255,255,255,0.3);
+}
+h1{font-size:1.4rem;margin:0.2rem 0 0.35rem;font-weight:700}
+.bio{margin:0 0 1.2rem;color:var(--muted);font-size:0.95rem}
+.links{display:flex;flex-direction:column;gap:0.6rem;margin-top:0.4rem}
+.link-btn{
+  display:inline-block;
+  width:100%;
+  text-decoration:none;
+  background:var(--accent);
+  color:#fff;
+  padding:0.9rem 1rem;
+  border-radius:10px;
+  font-weight:600;
+  transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+  box-shadow: 0 8px 24px rgba(43,143,185,0.18);
+}
+.link-btn:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(43,143,185,0.22);background:var(--accent-strong)}
+.link-btn:focus{outline:3px solid rgba(117,188,216,0.25);outline-offset:3px}
+.card-footer{margin-top:1.2rem;color:var(--muted);font-size:0.82rem}
+
+/* Responsive tweaks */
+@media (min-width:520px){
+  .card{padding:2.5rem}
+  h1{font-size:1.6rem}
+}
